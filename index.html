@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GUESS THE NUMBER</title>
+    <link rel="icon" href="Assets/favicon.png">
+    <!-- Import -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="logo">
+                <img src="Assets/logoDark.png" alt="Something Went Wrong!">
+            </div>
+            <div class="modes">
+                <i class='bx bxs-sun mode' ></i>
+                <i class='bx bxs-moon mode' ></i>
+            </div>
+        </nav>
+        <div class="middle-container">
+            <div class="score-container score">
+                <p>Score: <span class="score-number">20</span></p>
+            </div>
+            <div class="secret-number-container">
+                <p class="secret-number">?</p>
+            </div>
+            <div class="high-score score">High Score: <span class="high-score-number">20</span></div>
+        </div>
+        <div class="guessing-container">
+            <h1 class="message">Start Guessing.....</h1>
+            <p class="num-range">(Number between 1 - 20)</p>
+            <input type="text" class="user-guess" placeholder="Your Guess">
+        </div>
+        <div class="buttons">
+            <div class="first-row">
+                <button class="check btn">Check <i class='bx bx-chevron-right'></i></button>
+            </div>
+            <div class="second-row">
+                <button class="hint btn">Hint <i class='bx bxs-star' ></i></button>
+                <button class="again btn">Again <i class='bx bx-reset'></i></button>
+            </div>
+        </div>
+        <footer>
+            <p class="developer">Developer</p>
+            <div class="social">
+                <i class='bx bxl-github'></i>
+                <i class='bx bxl-instagram-alt'></i>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
