@@ -148,6 +148,13 @@ body {
   font-size: 2rem;
 }
 
+.message{
+  background-color: #ffbb00;
+  padding: 0rem 3rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+}
+
 /* Buttons Styling */
 
 .buttons{
@@ -297,4 +304,9 @@ body.active .guessing-container{
 }
 body.active footer{
   color: #707070;
+}
+body.active .message{
+  background-color: #1DE8ED;
+  color: #707070;
+  border: 2px solid #707070;
 }
