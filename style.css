@@ -10,9 +10,24 @@ html {
   font-family: "poppins", sans-serif;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar{
+  background-color: #3a3a3a;
+  width: .5rem;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #dda200;
+  border-radius: 3rem;
+}
 /* Body */
 
 body {
+  transition: .3s;
   background-color: #3a3a3a;
 }
 
@@ -60,27 +75,29 @@ body {
   background-color: #dda200;
 }
 
-/* Score Container Styling */
+/* CONTENT CONTAINER */
 
-.middle-container{
+.content-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  margin-top: 5rem;
+  justify-content: center;
 }
 
-.score{
-  color: white;
-  font-size: 3rem;
+/* LEFT CONTAINER */
+
+.content-left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.secret-number-container{
+.secret-number{
   margin: 3rem 0;
   background-color: #ffbb00;
   color: white;
-  width: 17rem;
-  height: 17rem;
+  width: 25rem;
+  height: 25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +107,15 @@ body {
   filter: drop-shadow(4px 5px 3px rgba(0, 0, 0, 0.16));
 }
 
-/* Guessing Container Styling */
+/* RIGHT CONTAINER */
+
+.scores{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-size: 2rem;
+}
 
 .guessing-container{
   display: flex;
@@ -108,11 +133,11 @@ body {
 
 .guessing-container p{
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .user-guess{
-  padding: 1rem 6rem;
+  padding: 2rem 3rem;
   border-radius: .5rem;
   margin-bottom: 1rem;
   border: none;
@@ -131,6 +156,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .btn{
@@ -145,7 +171,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: background-color .3s ease-in-out;
 }
@@ -154,9 +181,6 @@ body {
   background-color: #dda200;
 }
 
-.check{
-  margin-bottom: 0;
-}
 
 .btn i{
   color: #1DE8ED;
@@ -177,7 +201,6 @@ footer{
   padding: 2rem 0 1rem 0;
   color: white;
   font-size: 1.4rem;
-
 }
 
 footer i{
@@ -188,4 +211,90 @@ footer i{
 footer i:hover{
   transform: scale(1.5);
   color: rgb(199, 199, 199);
+}
+
+
+/* Media Query */
+@media screen and (min-width: 800px){
+    .nav{
+      flex-direction: row;
+    }
+    .user-guess{
+      padding: 1rem 6rem;
+    }
+    .buttons{
+      flex-direction: row;
+    }
+    .scores{
+      font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+  .container{
+    height: 100vh;
+  }
+  .content-container{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .secret-number{
+    width: 35rem;
+    height: 35rem;
+  }
+  Footer{
+    position: absolute;
+    bottom: 0;
+    right: 50%;  
+  }
+  .guessing-container{
+    align-items: flex-start;
+  }
+  .content-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .user-guess{
+    padding: 1rem 10.9rem;
+  }
+  .scores .score-number{
+    margin-right: 5rem;
+  }
+}
+
+/* Light Mode */
+body.active{
+  background-color: white;
+}
+body.active .secret-number{
+  border-color: #707070;
+  background-color: #1DE8ED;
+  color: #707070;
+}
+body.active .mode{
+  background-color: #1DE8ED;
+  color: #707070;
+  border-color: #707070;
+}
+body.active .btn{
+  background-color: #1DE8ED;
+  border-color: #707070;
+  color: #707070;
+}
+body.active .btn i{
+  color: #707070;
+}
+body.active .user-guess{
+  border: 2px solid #707070;
+}
+body.active .scores{
+  color: #707070;
+}
+body.active .guessing-container{
+  color: #707070;
+}
+body.active footer{
+  color: #707070;
 }
