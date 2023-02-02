@@ -201,6 +201,106 @@ body {
   justify-content: center;
 }
 
+/* Hint Card */
+
+.hint-card{
+  background-color: #ffbb00;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 40rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  border: solid white 4px;
+  display: none;
+}
+
+.hint-btn{
+  outline: transparent;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  background-color: #3a3a3a;
+  color: white;
+  cursor: pointer;
+  font-family: poppins;
+  transition: .3s;
+}
+
+.hint-btn:hover{
+  background-color: #494949;
+}
+
+.overlay{
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+  display: none;
+}
+
+.overlay-active{
+  display: block;
+}
+
+.hint-card-active{
+  display: flex;
+}
+
+.hint-message-container{
+  background-color: white;
+  position: fixed;
+  z-index: 101;
+  top: -10rem;
+  left: 50%;
+  width: 40rem;
+  height: 10rem;
+  transform: translateX(-50%);
+  border-radius: .5rem;
+  color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.hint-active{
+  top: 3rem;
+  transition: .3s ease-in-out;
+}
+
+.hint-message-container p{
+  max-width: 31.6rem;
+}
+
+.close{
+  font-size: 3rem;
+  background-color: #3a3a3a;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer
+  ;
+}
+.close:hover{
+  background-color: #494949;
+}
+
 /* Footer */
 
 footer{
@@ -210,12 +310,13 @@ footer{
   font-size: 1.4rem;
 }
 
-footer i{
+footer a i{
+  color: white;
   transition: all .3s ease-in-out;
   cursor: pointer;
 }
 
-footer i:hover{
+footer a:hover i:hover{
   transform: scale(1.5);
   color: rgb(199, 199, 199);
 }
@@ -302,7 +403,10 @@ body.active .scores{
 body.active .guessing-container{
   color: #707070;
 }
-body.active footer{
+body.active footer a{
+  color: #707070;
+}
+body.active footer p{
   color: #707070;
 }
 body.active .message{

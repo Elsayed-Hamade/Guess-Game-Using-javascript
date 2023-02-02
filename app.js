@@ -23,11 +23,16 @@ const secretNumberCircle = document.querySelector(".secret-number");
 const hint = document.querySelector(".hint");
 const again = document.querySelector(".again");
 const check = document.querySelector(".check");
+const overlay = document.querySelector(".overlay");
+const closeBtn = document.querySelector(".close");
+const hintCard = document.querySelector(".hint-card");
+const hintMessage = document.querySelector(".hint-message");
+const hintMessageContainer = document.querySelector(".hint-message-container");
+const hintBtn = document.querySelector(".hint-btn");
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
-console.log(secretNumber)
 
 const content = (element , input)=>{
     element.textContent = input;
@@ -71,4 +76,44 @@ again.addEventListener("click", () => {
     guessInput.value = "";
     content(message, "Start Guessing.....")
     document.body.style.backgroundColor = "#3a3a3a"
+})
+
+
+const hintMessageFunc = (range1, range2) => {
+    hintMessage.textContent = `The Number between ${range1} and ${range2}  (${range1}-${range2}) are included`
+};
+
+hint.addEventListener("click", ()=>{
+    hintCard.classList.add("hint-card-active")
+    overlay.classList.add("overlay-active")
+});
+
+closeBtn.addEventListener("click", ()=>{
+    hintCard.classList.remove("hint-card-active")
+    overlay.classList.remove("overlay-active")
+    hintMessageContainer.classList.remove("hint-active")
+});
+
+overlay.addEventListener("click", ()=>{
+    hintCard.classList.remove("hint-card-active")
+    overlay.classList.remove("overlay-active")
+    hintMessageContainer.classList.remove("hint-active")
+});
+
+hintBtn.addEventListener("click", ()=>{
+    score--;
+    content(scoreNumber, score)
+    if(secretNumber >= 1 && secretNumber <= 5){
+        hintMessageFunc(1, 5)
+    }
+    else if(secretNumber >= 6 && secretNumber <= 10){
+        hintMessageFunc(6, 10)
+    }
+    else if(secretNumber >= 11 && secretNumber <= 15){
+        hintMessageFunc(11, 15)
+    }
+    else if(secretNumber >= 16 && secretNumber <= 20){
+        hintMessageFunc(16, 20)
+    }
+    hintMessageContainer.classList.toggle("hint-active")
 })
